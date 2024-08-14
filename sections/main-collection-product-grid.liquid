@@ -31,6 +31,9 @@
          
           <div class="{{ section_name }}__listing listing--{{ section_name }}">
             {%- for product in collection.products -%}
+
+              {% if product.url contains 'sca_clone_freegift' %}{% continue %}{% endif %}
+              
               {%- render 'card-product', product: product, style: section_name -%}
             {%- endfor -%}
 
